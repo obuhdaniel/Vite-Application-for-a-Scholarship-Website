@@ -1,0 +1,173 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+}
+
+.navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.6rem;
+    font-weight: 600;
+    padding: 1.3rem;
+
+    color: orange;
+}
+
+.nav-list{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 0.3rem;
+}
+
+
+.nav-list-item:hover{
+    color: blueviolet;
+}
+
+
+.action-buttons-login{
+    color: orange;
+    border: 1px solid orange;
+    padding: 0.5rem 1rem;
+    border-radius: 5rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+.action-buttons{
+    color: white;
+    border: 1px solid orange;
+    padding: 0.5rem 1rem;
+    border-radius: 5rem;
+    text-decoration: none;
+    font-weight: 500;
+    background-color: ORANGE;
+}
+
+section{
+    width: 100%;
+    height: 90vh;
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.hero{
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(4, 13, 74, 0.966)), url('../../assets/study.jpg');
+    width: 90%;
+    height: 100vh;
+    border-radius: 3rem;
+
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin: 0 auto;
+    padding: 2rem;
+
+
+    background-repeat: no-repeat;
+}
+
+.hero-text-1{
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    text-align: start;
+}
+
+.hero-text-2{
+    font-size: 1.2rem;
+    color: white;
+    text-align: start;
+    margin-top: 1rem;
+
+}
+
+
+.section2{
+    background-color: rgb(3, 29, 59);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    height: fit-content;
+    padding: 3rem;
+}
+
+
+.section2-title{
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.section2-subtitle{
+    font-size: 0.8rem;
+    padding: 0.5rem;
+}
+
+.section2-container{
+    padding: 1.3rem;
+}
+
+.section2-email{
+    background-color: transparent;
+    font-size: .7rem;
+    border-radius: 30rem;
+    padding: .7rem;
+    border: 0.5px solid white;
+    color: white;
+}
+
+.section2-button{
+    background-color: white;
+    font-size: 0.7rem;
+    padding: .7rem;
+    border-radius: 30rem;
+    color: rgb(3, 29, 59);
+    font-weight: 600;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    font-size: 1rem;
+}
+footer div{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.footer-logo-image{
+    width: 10rem;
+    height: 7rem;
+}
+
+.motto, .contact{
+    color: orange;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+
+@media(max-width:768px){
+    footer{
+        flex-direction: column;
+    }
+}
