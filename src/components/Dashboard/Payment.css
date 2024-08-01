@@ -1,0 +1,40 @@
+.payment {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .payment h1 {
+    margin-bottom: 20px;
+  }
+  
+  .payment-details {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .payment-details p {
+    margin: 5px 0;
+  }
+  
+  .status-pending {
+    color: orange;
+  }
+  
+  .pay-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pay-button:hover {
+    background-color: #0056b3;
+  }
+  
