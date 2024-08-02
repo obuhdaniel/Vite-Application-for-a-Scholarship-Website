@@ -10,13 +10,23 @@ body, html {
   }
   
   .sidebar {
-    background-color: #002855;
+    background-color: #122e4e;
     color: #fff;
     width: 250px;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   }
-  
+  .user-text{
+    color: white;
+    text-align: center;
+  }
+
+  .logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   .logo img {
     width: 100px;
     height: 100px;
@@ -35,10 +45,23 @@ body, html {
   }
   
   .sidebar nav ul li {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 0.5px solid white;
+    border-radius: 0.3rem;
+    
+  }
+
+  .sidebar nav ul li:last-child {
+    margin-top: 50px;
+    padding: 5px;
+    
+    border-radius: 0.3rem;
+    background: #1280ff;
   }
   
   .sidebar nav ul li a {
+    
     color: #fff;
     text-decoration: none;
     font-size: 1.1em;
@@ -46,9 +69,7 @@ body, html {
     align-items: center;
   }
   
-  .sidebar nav ul li a:hover {
-    text-decoration: underline;
-  }
+  
   
   .main-content {
     flex: 1;

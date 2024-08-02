@@ -1,12 +1,14 @@
 import React from 'react';
 import './index.css'; // Create a separate CSS file for styling
 
+import logo from '../../assets/logo.png';
+
 const LoginPage = () => {
   return (
     <div className="login-page">
       <div className="login-container">
         <div className="logo">
-          <img src="path-to-your-logo.png" alt="Logo" />
+          <img src={logo} alt="Logo" />
         </div>
         <h1>Welcome Back</h1>
         <h5>Enter your Login Details</h5>

@@ -5,19 +5,20 @@ body, html {
   }
   
   .login-page {
-    background-image: url('path-to-your-background-image.jpg');
+    background-image: url('../../assets/bg.jpg');
+    
     background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 150vh;
     text-align: center;
   }
   
   .login-container {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -99,7 +100,7 @@ body, html {
     width: 100%;
     text-align: center;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
+    
     color: white;
     display: flex;
     align-items: center;

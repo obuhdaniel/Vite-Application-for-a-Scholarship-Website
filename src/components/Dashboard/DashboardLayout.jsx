@@ -1,31 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './DashboardLayout.css';
+import logo from '../../assets/logo.png';
 
 const DashboardLayout = ({ children }) => {
   return (
     <div className="dashboard">
       <div className="sidebar">
         <div className="logo">
-          <img src="path-to-your-logo.png" alt="Logo" />
+          <img src={logo} alt="Logo" />
         </div>
-        <h2>User Dashboard</h2>
+        <h2 className="user-text">User Dashboard</h2>
         <nav>
           <ul>
             <li>
-              <Link to="/payment">Payment</Link>
+              <Link to="/user/payment">Payment</Link>
             </li>
             <li>
-              <Link to="/personal-info">Personal Info</Link>
+              <Link to="/user/personal-info">Personal Info</Link>
             </li>
             <li>
-              <Link to="/institution-details">Institution Details</Link>
+              <Link to="/user/institution-details">Institution Details</Link>
             </li>
             <li>
-              <Link to="/bank-details">Bank Details</Link>
+              <Link to="/user/bank-details">Bank Details</Link>
             </li>
             <li>
-              <Link to="/acknowledgement">Acknowledgement</Link>
+              <Link to="/user/acknowledgement">Acknowledgement</Link>
             </li>
             <li>
               <Link to="/logout">Logout</Link>

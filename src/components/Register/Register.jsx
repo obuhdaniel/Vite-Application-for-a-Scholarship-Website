@@ -1,12 +1,14 @@
 import React from 'react';
 import './index.css'; // Create a separate CSS file for styling
 
+import logo from '../../assets/logo.png';
+
 const RegisterPage = () => {
   return (
     <div className="register-page">
       <div className="register-container">
         <div className="logo">
-          <img src="path-to-your-logo.png" alt="Logo" />
+          <img src={logo} alt="Logo" />
         </div>
         <h1>Create an Account</h1>
         <h2>Fill in your details to register</h2>
@@ -33,8 +35,10 @@ const RegisterPage = () => {
           </div>
           <button type="submit">Register</button>
         </form>
+
+        <span>Already have an account? <a href="/login" className='copy-link'>Login</a></span>
       </div>
-      <footer>All rights reserved</footer>
+      
     </div>
   );
 };

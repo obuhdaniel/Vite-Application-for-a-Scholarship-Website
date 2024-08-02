@@ -1,18 +1,31 @@
 import React from 'react';
 import './Payment.css';
+import DashboardLayout from './DashboardLayout';
 
 const Payment = () => {
   return (
-    <div className="payment">
-      <h1>Make Payment</h1>
+
+    <DashboardLayout>
+       <div className="payment">
+
+
+        <div className="top">
+          <h3>Make Payment</h3>
+          <p>Application Status: <span className="pending">Pending</span></p>
+        </div>
       <div className="payment-details">
-        <p>Applicant ID: DSB/2024/12345</p>
-        <p>Student Name: John Doe</p>
-        <p>Payment Amount: N800</p>
-        <p>Payment Status: <span className="status-pending">Pending</span></p>
+
+        <div className="payment-details-item"><span>Applicant ID:</span> <span>DSB/2024/12345</span> </div>
+        <div className="payment-details-item"><span>Student Name:</span> <span>John Doe</span> </div>
+        <div className="payment-details-item"><span>Payment Amount:</span> <span>N800</span> </div>
+        <div className="payment-details-item"><span>Payment Method:</span> <span>Paystack</span> </div>
+        <div className="payment-details-item"><span>Payment Status:</span> <span className="pending">Pending</span> </div>
+        
       </div>
       <button className="pay-button">Pay with Paystack</button>
     </div>
+    </DashboardLayout>
+   
   );
 };
 
