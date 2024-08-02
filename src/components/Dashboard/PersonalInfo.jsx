@@ -1,11 +1,15 @@
 import React from "react";
 import DashboardLayout from "./DashboardLayout";
+import './styles/personal-information.css'
 
 const PersonalInfo = () => {
   return (
     <DashboardLayout>
       <div className="form-container">
-        <h2 className="form-title">Personal Information</h2>
+      <div className="top">
+          <h3>Personal Information</h3>
+          <p>Application Status: <span className="pending">Pending</span></p>
+        </div>
         <form className="personal-form">
           <div className="form-group">
             <label>Applicant ID</label>
@@ -13,11 +17,11 @@ const PersonalInfo = () => {
           </div>
           <div className="form-group">
             <label>Surname (Lastname)</label>
-            <input type="text" value="lolo" />
+            <input type="text" value="lolo" disabled />
           </div>
           <div className="form-group">
             <label>First Name</label>
-            <input type="text" value="lolo" />
+            <input type="text" value="lolo" disabled />
           </div>
           <div className="form-group">
             <label>Middle Name</label>
@@ -44,7 +48,7 @@ const PersonalInfo = () => {
           </div>
           <div className="form-group">
             <label>Email</label>
-            <input type="email" value="lolo@gmail.com" />
+            <input type="email" value="lolo@gmail.com" disabled/>
           </div>
           <div className="form-group">
             <label>Address</label>
@@ -65,10 +69,7 @@ const PersonalInfo = () => {
             <label>Upload Passport</label>
             <button type="button">Upload Passport</button>
           </div>
-          <div className="form-group status">
-            <span>Application Status: </span>
-            <span className="pending">Pending</span>
-          </div>
+          
           <button type="submit" className="submit-button">
             Save and Continue
           </button>
