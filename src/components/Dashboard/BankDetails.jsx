@@ -6,21 +6,38 @@ const BankDetails = () => {
         <DashboardLayout>
         <div className="form-container">
           <div className="top">
-            <h3>Institutional Details</h3>
+            <h3>BanK Details</h3>
             <p>
               Application Status: <span className="pending">Pending</span>
             </p>
           </div>
           <form className="institution-form">
-            <div className="form-group">
-              <label>BanK Name</label>
-              <select>
-                <option value="" disabled selected>
-                  Select Institution
-                </option>
-                {/* Add institution options here */}
-              </select>
-            </div>
+          <div className="form-group">
+  <label>Bank Name</label>
+  <select>
+    <option value="" disabled selected>Select Bank</option>
+    <option value="citibank-nigeria-limited">CITIBANK NIGERIA LIMITED</option>
+    <option value="ecobank-nigeria-limited">ECOBANK NIGERIA LIMITED</option>
+    <option value="heritage-bank-plc">HERITAGE BANK PLC</option>
+    <option value="globus-bank-limited">GLOBUS BANK LIMITED</option>
+    <option value="keystone-bank-limited">KEYSTONE BANK LIMITED</option>
+    <option value="polaris-bank-limited">POLARIS BANK LIMITED</option>
+    <option value="stanbic-ibtc-bank-limited">STANBIC IBTC BANK LIMITED</option>
+    <option value="standard-chartered-bank-limited">STANDARD CHARTERED BANK LIMITED</option>
+    <option value="sterling-bank-limited">STERLING BANK LIMITED</option>
+    <option value="titan-trust-bank-limited">TITAN TRUST BANK LIMITED</option>
+    <option value="union-bank-of-nigeria-plc">UNION BANK OF NIGERIA PLC</option>
+    <option value="unity-bank-plc">UNITY BANK PLC</option>
+    <option value="wema-bank-plc">WEMA BANK PLC</option>
+    <option value="premium-trust-bank-limited">PREMIUM TRUST BANK LIMITED</option>
+    <option value="optimus-bank-limited">OPTIMUS BANK LIMITED</option>
+    <option value="providus-bank-limited">PROVIDUS BANK LIMITED</option>
+    <option value="parallex-bank-limited">PARALLEX BANK LIMITED</option>
+    <option value="suntrust-bank-nigeria-limited">SUNTRUST BANK NIGERIA LIMITED</option>
+    <option value="signature-bank-limited">SIGNATURE BANK LIMITED</option>
+  </select>
+</div>
+
             
             <div className="form-group">
               <label>Account Name</label>

@@ -1,14 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import DashboardLayout from "./DashboardLayout";
-import './styles/personal-information.css'
+import "./styles/personal-information.css";
+
+const MAX_FILE_SIZE_MB = 0.5;
+const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024; // Convert MB to bytes
 
 const PersonalInfo = () => {
+  const [imageSrc, setImageSrc] = useState("");
+  const [base64Image, setBase64Image] = useState("");
+  const [error, setError] = useState("");
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      if (file.size > MAX_FILE_SIZE_BYTES) {
+        setError("File size exceeds 0.5 MB limit.");
+        setImageSrc("");
+        setBase64Image("");
+      } else {
+        setError("");
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const base64String = e.target.result;
+          setImageSrc(base64String);
+          setBase64Image(base64String);
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+  };
+
+  const handleSave = () => {
+    // Example: Saving base64Image to database or elsewhere
+    console.log("Base64 Image:", base64Image);
+    // Here you would typically make an API call to save base64Image
+  };
   return (
     <DashboardLayout>
       <div className="form-container">
-      <div className="top">
+        <div className="top">
           <h3>Personal Information</h3>
-          <p>Application Status: <span className="pending">Pending</span></p>
+          <p>
+            Application Status: <span className="pending">Pending</span>
+          </p>
         </div>
         <form className="personal-form">
           <div className="form-group">
@@ -48,7 +82,7 @@ const PersonalInfo = () => {
           </div>
           <div className="form-group">
             <label>Email</label>
-            <input type="email" value="lolo@gmail.com" disabled/>
+            <input type="email" value="lolo@gmail.com" disabled />
           </div>
           <div className="form-group">
             <label>Address</label>
@@ -65,11 +99,35 @@ const PersonalInfo = () => {
               placeholder="Enter your local government of origin"
             />
           </div>
-          <div className="form-group passport-upload">
-            <label>Upload Passport</label>
-            <button type="button">Upload Passport</button>
+
+          <div className="form-group ">
+            <label htmlFor="passportUpload">Upload Passport</label>
+            <input
+              type="file"
+              id="passportUpload"
+              accept="image/*"
+              style={{ display: "none" }}
+              onChange={handleFileChange}
+            />
+
+            {imageSrc && (
+              <div className="passport-upload">
+                <img
+                  src={imageSrc}
+                  className="passport"
+                  alt="Uploaded Passport"
+                />
+                {error && <p className="error">{error}</p>}
+              </div>
+            )}
+            <button
+              type="button"
+              onClick={() => document.getElementById("passportUpload").click()}
+            >
+              Upload Passport <span className="max">* MAX 0.5MB</span>
+            </button>
           </div>
-          
+
           <button type="submit" className="submit-button">
             Save and Continue
           </button>
