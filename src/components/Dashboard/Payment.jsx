@@ -22,7 +22,7 @@ const Payment = () => {
         <div className="payment-details-item"><span>Payment Status:</span> <span className="pending">Pending</span> </div>
         
       </div>
-      <button className="pay-button">Pay with Paystack</button>
+      <a href="https://paystack.com/pay/national-competion" className="pay-button">Pay with Paystack </a>
     </div>
     </DashboardLayout>
    
