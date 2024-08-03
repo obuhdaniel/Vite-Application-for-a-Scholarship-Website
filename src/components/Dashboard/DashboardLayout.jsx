@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './DashboardLayout.css';
-import logo from '../../assets/logo.png';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./DashboardLayout.css";
+import logo from "../../assets/logo.png";
 
 const DashboardLayout = ({ children }) => {
   return (
@@ -14,29 +14,87 @@ const DashboardLayout = ({ children }) => {
         <nav>
           <ul>
             <li>
-              <Link to="/user/payment">Payment</Link>
+              <Link to="/user/payment">
+                <button className="link-button">
+                  <img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios/50/FFFFFF/card-in-use.png"
+                    alt="card-in-use"
+                  />
+                  Payment
+                </button>
+              </Link>
             </li>
             <li>
-              <Link to="/user/personal-info">Personal Info</Link>
+              <Link to="/user/personal-info">
+                <button className="link-button">
+                  <img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/30/FFFFFF/external-Personal-Information-politics-smashingstocks-glyph-smashing-stocks.png"
+                    alt="external-Personal-Information-politics-smashingstocks-glyph-smashing-stocks"
+                  />
+                  Personal Info
+                </button>
+              </Link>
             </li>
             <li>
-              <Link to="/user/institution-details">Institution Details</Link>
+              <Link to="/user/institution-details">
+                <button className="link-button">
+                  <img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/30/FFFFFF/university.png"
+                    alt="university"
+                  />
+                  Institution Details
+                </button>
+              </Link>
             </li>
             <li>
-              <Link to="/user/bank-details">Bank Details</Link>
+              <Link to="/user/bank-details">
+                <button className="link-button">
+                  <img
+                    width="32"
+                    height="32"
+                    src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/32/FFFFFF/external-withdraw-finance-2-kmg-design-glyph-kmg-design.png"
+                    alt="external-withdraw-finance-2-kmg-design-glyph-kmg-design"
+                  />
+                  Bank Details
+                </button>
+              </Link>
             </li>
             <li>
-              <Link to="/user/acknowledgement">Acknowledgement</Link>
+              <Link to="/user/acknowledgement">
+                <button className="link-button">
+                  <img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios-filled/30/FFFFFF/document--v1.png"
+                    alt="document--v1"
+                  />
+                  Acknowledgement
+                </button>
+              </Link>
             </li>
             <li>
-              <Link to="/logout">Logout</Link>
+              <Link to="/logout">
+                <button className="link-button">
+                  <img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/pastel-glyph/30/FFFFFF/exit--v1.png"
+                    alt="exit--v1"
+                  />
+                  Logout
+                </button>
+              </Link>
             </li>
           </ul>
         </nav>
       </div>
-      <div className="main-content">
-        {children}
-      </div>
+      <div className="main-content">{children}</div>
     </div>
   );
 };
