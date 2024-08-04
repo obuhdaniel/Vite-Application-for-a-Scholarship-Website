@@ -22,6 +22,19 @@ const DashboardLayout = ({ children }) => {
                     src="https://img.icons8.com/ios/50/FFFFFF/card-in-use.png"
                     alt="card-in-use"
                   />
+                  Dashboard 
+                </button>
+              </Link>
+            </li>
+            <li>
+              <Link to="/user/payment">
+                <button className="link-button">
+                  <img
+                    width="30"
+                    height="30"
+                    src="https://img.icons8.com/ios/50/FFFFFF/card-in-use.png"
+                    alt="card-in-use"
+                  />
                   Payment
                 </button>
               </Link>

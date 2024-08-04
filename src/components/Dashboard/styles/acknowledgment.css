@@ -9,3 +9,84 @@
 .complete{
     color: green;
 }
+
+.container {
+    
+    padding: 20px;
+    width: 700px;
+    margin: 5px auto;
+  }
+  
+  h1,
+  h2 {
+    text-align: center;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  .section-title {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .details-table td {
+    padding: 5px;
+    vertical-align: top;
+  }
+  
+  .details-table td:first-child {
+    width: 30%;
+    font-weight: bold;
+  }
+  
+  .checkbox {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox input {
+    margin-right: 10px;
+  }
+  
+  .signatures {
+    margin-top: 20px;
+  }
+  
+  .signatures div {
+    margin-bottom: 10px;
+  }
+
+  .image-container {
+    text-align: end; /* Aligns children to the end of the container */
+    margin-bottom: 20px; /* Space below the container */
+    width: 200px; /* Fixed width for the container */
+    height: 200px; /* Fixed height for the container */
+    overflow: hidden; /* Ensures any overflowing content is clipped */
+    position: relative; /* Positions child elements if needed */
+}
+
+.uploaded-image {
+    object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+    width: 100%; /* Image takes full width of the container */
+    height: 100%; /* Image takes full height of the container */
+    border: 1px solid #ddd; /* Border around the image */
+    display: block; /* Removes extra space below the image */
+    margin: 0; /* Remove any default margins */
+}
+
+
+  .flexx{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }

@@ -1,66 +1,91 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './styles/index.css'; 
 import logo from '../assets/logo.png';
 import studyPic from '../assets/study.jpg';
-
 import { Link } from 'react-router-dom';
 
 const Homepage = () => {
+
+    const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+
+  const handleChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateEmail(email)) {
+      // Handle the email submission logic here (e.g., API call)
+      console.log('Email submitted:', email);
+      setError('');
+      setEmail('');
+    } else {
+      setError('Please enter a valid email address');
+    }
+  };
+
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
     return (
         <div>
-            <div className="navbar">
+            <header className="navbar">
                 <nav className="navigation">
                     <div className="logo">The Algorithm</div>
-                    <div className="nav-items">
-                        <ul className="nav-list">
-                            <li className="nav-list-item">Home</li>
-                            <li className="nav-list-item">Quick Links</li>
-                            <li className="nav-list-item">News</li>
-                            <li className="nav-list-item">About Us</li>
-                            <li className="nav-list-item">Contact Us</li>
-                        </ul>
-                    </div>
-
+                    <ul className="nav-list">
+                        <li className="nav-list-item"><Link to="/">Home</Link></li>
+                        <li className="nav-list-item"><Link to="/quick-links">Quick Links</Link></li>
+                        <li className="nav-list-item"><Link to="/news">News</Link></li>
+                        <li className="nav-list-item"><Link to="/about">About Us</Link></li>
+                        <li className="nav-list-item"><Link to="/contact">Contact Us</Link></li>
+                    </ul>
                     <div className="nav-actions">
                         <Link to="/login" className="action-buttons-login">Log In</Link>
                         <Link to="/register" className="action-buttons">Register</Link>
                     </div>
                 </nav>
-            </div>
+            </header>
 
-            <section className="section1">
+            <section className="hero-section">
                 <div className="hero">
                     <div className="hero-texts">
-                        <p className="hero-text-1">Unlock Your Future: <br />The Algorithm National <br />Scholarship Examination</p>
+                        <h1 className="hero-text-1">Unlock Your Future: The Algorithm National Scholarship Examination</h1>
                         <p className="hero-text-2">Sharpen Your Skills, Rise to the Challenge - Compete for Your Future Success</p>
                     </div>
                 </div>
             </section>
 
-            <section className="section2">
-                <span className="section2-title">Stay informed and Never Miss <br />any Update</span>
-                <span className="section2-subtitle">Keep up with the latest news, announcements and updates from The Algorithm National Competition by subscribing to our Newsletter. Be the first to know about registration dates, examination schedules, results, admissions, and other information.</span>
+            
 
-                <div className="section2-container">
-                    <input type="email" name="email" placeholder="Enter your Email" className="section2-email" />
-                    <button className="section2-button">Get Started</button>
+            <div className="newsletter-signup">
+      <h2>Subscribe to our Newsletter</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="email"
+          value={email}
+          onChange={handleChange}
+          placeholder="Enter your email"
+          required
+        />
+        <button type="submit">Subscribe</button>
+        {error && <p className="error-message">{error}</p>}
+      </form>
+    </div>
+
+
+            <section className="footer">
+                <div className="footer-logo">
+                    <img src={logo} alt="The Algorithm Logo" className="footer-logo-image" />
+                    <p className="motto">Enhancing Academic Excellence</p>
+                </div>
+                <div className="footer-contact">
+                    <h3 className="contact">Contact Us</h3>
+                    <p>Email: info@thealgorithm.com</p>
+                    <p>Phone: +2348105772774, +2349022439482</p>
                 </div>
             </section>
-
-            <footer>
-                <div>
-                    <div className="footer-logo">
-                        <img src={logo} alt="" className="footer-logo-image" />
-                    </div>
-                    <span className="motto">Enhancing Academic <br />Excellence</span>
-                </div>
-
-                <div>
-                    <span className="contact">Contact us</span>
-                    <span>Email: info@thealgorithm.com</span>
-                    <span>Phone: +2348105772774 +2349022439482</span>
-                </div>
-            </footer>
         </div>
     );
 }
