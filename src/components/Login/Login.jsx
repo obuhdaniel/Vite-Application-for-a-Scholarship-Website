@@ -37,7 +37,8 @@ const LoginPage = () => {
           email: "",
           password: "",
         });
-        setError(""); // Clear any previous errors
+        setError(""); 
+        window.location.href = "/user/payment"
       } else {
         console.error("No token received");
         setError("No token received");

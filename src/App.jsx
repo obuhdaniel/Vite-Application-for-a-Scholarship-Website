@@ -11,6 +11,7 @@ import PersonalInfo from './components/Dashboard/PersonalInfo';
 import INstitutionalDetails from './components/Dashboard/InstitutionalDetails';
 import BankDetails from './components/Dashboard/BankDetails';
 import Acknowledgement from './components/Dashboard/Acknowledgement';
+import ProtectedRoute from './components/Security/ProtectedRoute';
 
 import './index.css';
 
