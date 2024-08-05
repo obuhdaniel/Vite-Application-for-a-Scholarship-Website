@@ -1,8 +1,13 @@
 import React from 'react';
 import './styles/about.css'; // Import the CSS file for styling
 
+import Header from './Header';
+
 const AboutSection = () => {
   return (
+    <>
+
+    <Header/>
     <section className="about-section">
       <div className="about-container">
         <h2 className="about-title">The Algorithm National Competition</h2>
@@ -56,6 +61,8 @@ const AboutSection = () => {
         </p>
       </div>
     </section>
+
+    </>
   );
 };
 
