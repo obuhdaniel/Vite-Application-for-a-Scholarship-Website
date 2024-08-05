@@ -1,11 +1,22 @@
-// src/ProtectedRoute.js
-import React from 'react';
-import { Navigate } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import { AuthContext } from './AuthContext';
 
-const ProtectedRoute = ({ element, ...rest }) => {
-  const token = localStorage.getItem('token');
+const ProtectedRoute = ({ component: Component, ...rest }) => {
+  const { user } = useContext(AuthContext);
 
-  return token ? element : <Navigate to="/login" />;
+  return (
+    <Route
+      {...rest}
+      render={props =>
+        user ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to="/login" />
+        )
+      }
+    />
+  );
 };
 
 export default ProtectedRoute;
