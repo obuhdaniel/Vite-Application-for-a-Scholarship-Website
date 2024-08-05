@@ -14,6 +14,9 @@ import Acknowledgement from './components/Dashboard/Acknowledgement';
 import ProtectedRoute from './components/Security/ProtectedRoute';
 import AboutSection from './components/About';
 import ContactUs from './components/ContactUs';
+import Dashboard from './components/Dashboard/Main';
+
+
 
 import './index.css';
 
@@ -37,6 +40,8 @@ function App() {
         <Route path="/user/acknowledgement" element={<Acknowledgement />} />
         <Route path="/about" element={<AboutSection />} />
         <Route path="/contact" element={<ContactUs />} />
+
+        <ProtectedRoute path="/user/dashboard" component={Dashboard} />
 
 
         
