@@ -1,0 +1,123 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .about-section {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .about-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .about-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .about-intro {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #555;
+    animation: fadeIn 1s 0.2s ease-out; /* Delayed fadeIn */
+  }
+  
+  .about-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    animation: fadeIn 1s 0.4s ease-out; /* Delayed fadeIn */
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #444;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .application-details, .contact-info, .registration-dates, .overview-description, .resources-info, .preparation-info {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .criteria-list, .dates-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .criteria-list li, .dates-list li {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  a {
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  a:hover {
+    color: #004a99;
+    text-decoration: underline;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .about-title {
+      font-size: 1.5rem;
+    }
+  
+    .about-intro {
+      font-size: 1.25rem;
+    }
+  
+    .about-description, .application-details, .contact-info, .registration-dates, .overview-description, .resources-info, .preparation-info {
+      font-size: 0.9rem;
+    }
+  
+    .section-title {
+      font-size: 1.1rem;
+    }
+  }
+  

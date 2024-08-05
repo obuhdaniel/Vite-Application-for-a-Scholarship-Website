@@ -12,6 +12,7 @@ import INstitutionalDetails from './components/Dashboard/InstitutionalDetails';
 import BankDetails from './components/Dashboard/BankDetails';
 import Acknowledgement from './components/Dashboard/Acknowledgement';
 import ProtectedRoute from './components/Security/ProtectedRoute';
+import AboutSection from './components/About';
 
 import './index.css';
 
@@ -31,8 +32,9 @@ function App() {
         <Route path="/user/personal-info" element={<PersonalInfo />} />
         <Route path="/user/institution-details" element={<INstitutionalDetails />} />
         <Route path="/user/bank-details" element={<BankDetails />} />
-        <Route path="/user/payment" element={<Payment />} />
+        <Route path="/user/payment" element={<ProtectedRoute element={<Payment/>}/>} />
         <Route path="/user/acknowledgement" element={<Acknowledgement />} />
+        <Route path="/about" element={<AboutSection />} />
 
 
         
