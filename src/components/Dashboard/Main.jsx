@@ -3,6 +3,7 @@ import { AuthContext } from '../Security/AuthContext';
 
 const Dashboard = () => {
   const { user, logout } = useContext(AuthContext);
+  console.log(user)
 
   return (
     <div>
