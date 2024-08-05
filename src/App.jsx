@@ -13,6 +13,7 @@ import BankDetails from './components/Dashboard/BankDetails';
 import Acknowledgement from './components/Dashboard/Acknowledgement';
 import ProtectedRoute from './components/Security/ProtectedRoute';
 import AboutSection from './components/About';
+import ContactUs from './components/ContactUs';
 
 import './index.css';
 
@@ -35,6 +36,7 @@ function App() {
         <Route path="/user/payment" element={<ProtectedRoute element={<Payment/>}/>} />
         <Route path="/user/acknowledgement" element={<Acknowledgement />} />
         <Route path="/about" element={<AboutSection />} />
+        <Route path="/contact" element={<ContactUs />} />
 
 
         

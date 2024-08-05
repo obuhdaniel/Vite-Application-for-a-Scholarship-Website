@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./styles/index.css";
 import logo from "../assets/logo.png";
-import studyPic from "../assets/study.jpg";
 import { Link } from "react-router-dom";
 import FAQSection from "./Dashboard/FAQ/faq";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const Homepage = () => {
   const [email, setEmail] = useState("");
@@ -30,37 +31,9 @@ const Homepage = () => {
     return re.test(email);
   };
   return (
-    <div>
-      <header className="navbar">
-        <nav className="navigation">
-          <div className="logo">The Algorithm</div>
-          <ul className="nav-list">
-            <li className="nav-list-item">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="nav-list-item">
-              <Link to="/quick-links">Quick Links</Link>
-            </li>
-            <li className="nav-list-item">
-              <Link to="/news">News</Link>
-            </li>
-            <li className="nav-list-item">
-              <Link to="/about">About Us</Link>
-            </li>
-            <li className="nav-list-item">
-              <Link to="/contact">Contact Us</Link>
-            </li>
-          </ul>
-          <div className="nav-actions">
-            <Link to="/login" className="action-buttons-login">
-              Log In
-            </Link>
-            <Link to="/register" className="action-buttons">
-              Register
-            </Link>
-          </div>
-        </nav>
-      </header>
+
+    <>   <Header/> <div>
+      
 
       <section className="hero-section">
         <div className="hero">
@@ -72,6 +45,28 @@ const Homepage = () => {
               Sharpen Your Skills, Rise to the Challenge - Compete for Your
               Future Success
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="competition-info">
+        <div className="info-container">
+          <h2 className="info-title">Join the Algorithm National Competition</h2>
+          <p className="info-description">
+            Interested aspirants are invited to become a part of the ALGORITHM NATIONAL COMPETITION. The selected students will receive an award amount of <strong>₦50,000</strong> each.
+          </p>
+          
+          <div className="brief-description">
+            <h3>Brief Description</h3>
+            <ul>
+              <li><strong>Organization:</strong> SMATLAB360</li>
+              <li><strong>Department:</strong> N/A</li>
+              <li><strong>Course Level:</strong> Undergraduate</li>
+              <li><strong>Award:</strong> ₦50,000</li>
+              <li><strong>Access Mode:</strong> Online</li>
+              <li><strong>Number of Awards:</strong> N/A</li>
+              <li><strong>Nationality:</strong> Nigeria</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -93,22 +88,12 @@ const Homepage = () => {
         </form>
       </div>
 
-      <section className="footer">
-        <div className="footer-logo">
-          <img
-            src={logo}
-            alt="The Algorithm Logo"
-            className="footer-logo-image"
-          />
-          <p className="motto">Enhancing Academic Excellence</p>
-        </div>
-        <div className="footer-contact">
-          <h3 className="contact">Contact Us</h3>
-          <p>Email: info@thealgorithm.com</p>
-          <p>Phone: +2348105772774, +2349022439482</p>
-        </div>
-      </section>
+      
     </div>
+    <Footer/>
+
+    </>
+
   );
 };
 
