@@ -1,15 +1,15 @@
+/* Base styles */
 body, html {
   height: 100%;
   margin: 0;
   font-family: Arial, sans-serif;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
-
-  
 }
 
 .dashboard {
   display: flex;
+  flex-direction: column;
   height: 100vh; /* Full viewport height */
 }
 
@@ -21,12 +21,13 @@ body, html {
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   position: fixed; /* Fixed positioning */
   height: 100vh; /* Full viewport height */
-  overflow: scroll; /* Prevent scrolling */
-  -webkit-overflow-scrolling: false; 
+  overflow-y: auto; /* Enable vertical scrolling */
 }
-.sidebar::-webkit-scrollbar{
+
+.sidebar::-webkit-scrollbar {
   display: none; /* Hide scrollbar */
 }
+
 .user-text {
   color: white;
   text-align: center;
@@ -108,4 +109,54 @@ body, html {
 
 .link-button:active {
   background-color: #384673;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+    padding: 15px;
+  }
+
+  .logo img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .sidebar h2 {
+    font-size: 1.25em;
+  }
+
+  .sidebar nav ul li a {
+    font-size: 1em;
+  }
+
+  .main-content {
+    margin-left: 200px; /* Adjust space for the smaller sidebar */
+    padding: 15px;
+  }
+
+  .link-button {
+    font-size: 14px !important;
+    padding: 4px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative; /* Change to relative for mobile */
+    overflow-y: visible; /* Allow scrolling within the sidebar */
+  }
+
+  .main-content {
+    margin-left: 0; /* Remove margin for mobile view */
+    padding: 10px;
+  }
+
+  .link-button {
+    font-size: 13px !important;
+    padding: 3px !important;
+  }
 }

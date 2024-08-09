@@ -1,8 +1,39 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import DashboardLayout from "./DashboardLayout";
 import "./styles/institution.css";
+import { axiosInstance } from "../../api/api";
 
 const INstitutionalDetails = () => {
+  const [formData, setFormData] = useState({
+    institutionName: "",
+    faculty: "",
+    department: "",
+    level: "",
+    matricNo: "",
+    degreeType: "",
+    yearOfAdmission: "",
+    expectedGradYear: "",
+    currentSemester: "",
+    cgpa: "",
+    jambRegNo: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const response = axiosInstance.post("/users/institution-data", formData, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(formData);
+
+    window.location.href= "/user/bank-details";
+
+    console.log(response.data.message);
+  };
   return (
     <DashboardLayout>
       <div className="form-container">
@@ -12,10 +43,16 @@ const INstitutionalDetails = () => {
             Application Status: <span className="pending">Pending</span>
           </p>
         </div>
-        <form className="institution-form">
+        <form className="institution-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Name of Institution</label>
-            <select>
+            <select
+              id="institutionName"
+              name="institutionName"
+              value={formData.institutionName}
+              onChange={handleChange}
+              required
+            >
               <option value="" disabled selected>
                 Select Institution
               </option>
@@ -1002,25 +1039,54 @@ const INstitutionalDetails = () => {
           </div>
           <div className="form-group">
             <label>Faculty</label>
-            <select>
+            <select
+              id="faculty"
+              name="faculty"
+              value={formData.faculty}
+              onChange={handleChange}
+              required
+            >
               <option value="" disabled selected>
                 Select Faculty
               </option>
-              {/* Add faculty options here */}
+              <option value="engineering" >
+                Engineering
+              </option>
+              <option value="science" >Science</option>
+              <option value="arts" >Arts</option>
+              <option value="commerce" >Commerce</option>
+              <option value="humanities" >Humanities</option>
             </select>
           </div>
           <div className="form-group">
             <label>Department</label>
-            <select>
+            <select
+              id="department"
+              name="department"
+              value={formData.department}
+              onChange={handleChange}
+              required
+            >
               <option value="" disabled selected>
                 Select Department
               </option>
-              {/* Add department options here */}
+              <option value="engineering" >
+                Engineering
+              </option>
+              <option value="science" >
+                Science
+              </option>
             </select>
           </div>
           <div className="form-group">
             <label>Level</label>
-            <select>
+            <select
+              id="level"
+              name="level"
+              value={formData.level}
+              onChange={handleChange}
+              required
+            >
               <option value="" disabled selected>
                 Select Level
               </option>
@@ -1033,11 +1099,25 @@ const INstitutionalDetails = () => {
           </div>
           <div className="form-group">
             <label>Matric. No.</label>
-            <input type="text" placeholder="Enter Matric No." />
+            <input
+              type="text"
+              placeholder="Enter Matric No."
+              id="matricNo"
+              name="matricNo"
+              value={formData.matricNo}
+              onChange={handleChange}
+              required
+            />
           </div>
           <div className="form-group">
             <label>Degree Type</label>
-            <select>
+            <select
+              id="degreeType"
+              name="degreeType"
+              value={formData.degreeType}
+              onChange={handleChange}
+              required
+            >
               <option value="" disabled selected>
                 Select Degree
               </option>
@@ -1057,7 +1137,13 @@ const INstitutionalDetails = () => {
           </div>
           <div className="form-group">
             <label>Year of Admission</label>
-            <select>
+            <select
+              id="yearOfAdmission"
+              name="yearOfAdmission"
+              value={formData.yearOfAdmission}
+              onChange={handleChange}
+              required
+            >
               <option value="" disabled selected>
                 Select Year
               </option>
@@ -1071,7 +1157,13 @@ const INstitutionalDetails = () => {
           </div>
           <div className="form-group">
             <label>Expected Grad. Year</label>
-            <select>
+            <select
+              id="expectedGradYear"
+              name="expectedGradYear"
+              value={formData.expectedGradYear}
+              onChange={handleChange}
+              required
+            >
               <option value="" disabled selected>
                 Select Year
               </option>
@@ -1086,7 +1178,13 @@ const INstitutionalDetails = () => {
           </div>
           <div className="form-group">
             <label>Current Semester</label>
-            <select>
+            <select
+              id="currentSemester"
+              name="currentSemester"
+              value={formData.currentSemester}
+              onChange={handleChange}
+              required
+            >
               <option value="" disabled selected>
                 Select Semester
               </option>
@@ -1096,11 +1194,27 @@ const INstitutionalDetails = () => {
           </div>
           <div className="form-group">
             <label>CGPA</label>
-            <input type="text" placeholder="Enter CGPA" />
+            <input
+              type="text"
+              placeholder="Enter CGPA"
+              id="cgpa"
+              name="cgpa"
+              value={formData.cgpa}
+              onChange={handleChange}
+              required
+            />
           </div>
           <div className="form-group">
             <label>Jamb Registration No.</label>
-            <input type="text" placeholder="Enter Jamb Reg No." />
+            <input
+              type="text"
+              placeholder="Enter Jamb Reg No."
+              id="jambRegNo"
+              name="jambRegNo"
+              value={formData.jambRegNo}
+              onChange={handleChange}
+              required
+            />
           </div>
           <button type="submit" className="submit-button">
             Save and Continue

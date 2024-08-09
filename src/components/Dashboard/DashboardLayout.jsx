@@ -1,9 +1,37 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import "./DashboardLayout.css";
 import logo from "../../assets/logo.png";
+import { axiosInstance } from "../../api/api";
+
 
 const DashboardLayout = ({ children }) => {
+
+  const [paymentDetails, setPaymentDetails] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchPaymentDetails = async () => {
+      try {
+        const response = await axiosInstance.get('users/pay'); 
+        setPaymentDetails(response.data.paymentData);
+        ;
+        setError(null);
+      } catch (err) {
+        console.error('Error fetching payment details:', err.response ? err.response.data : err.message);
+        setError('Failed to fetch payment details');
+        setPaymentDetails(null);
+      }
+    };
+
+    fetchPaymentDetails();
+  }, []);
+  const childrenWithProps = React.Children.map(children, child =>
+    React.cloneElement(child, { paymentDetails, error })
+  );
+
+  console.log('Payment Details Prop:', paymentDetails); // Ensure this log shows correct data
+
   return (
     <div className="dashboard">
       <div className="sidebar">
@@ -107,7 +135,7 @@ const DashboardLayout = ({ children }) => {
           </ul>
         </nav>
       </div>
-      <div className="main-content">{children}</div>
+      <div className="main-content">{childrenWithProps}</div>
     </div>
   );
 };

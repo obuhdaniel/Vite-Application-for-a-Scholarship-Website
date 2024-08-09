@@ -36,13 +36,13 @@ function App() {
 
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/user/personal-info" element={<PersonalInfo />} />
+            <Route path="/user/personal-info" element={<DashboardLayout><PersonalInfo /></DashboardLayout>} />
             <Route
               path="/user/institution-details"
               element={<INstitutionalDetails />}
             />
             <Route path="/user/bank-details" element={<BankDetails />} />
-            <Route path="/user/payment" element={<Payment />} />
+            <Route path="/user/payment" element={<DashboardLayout><Payment /></DashboardLayout>} />
             <Route path="/user/acknowledgement" element={<Acknowledgement />} />
           </Route>
         </Routes>
