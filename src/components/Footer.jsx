@@ -21,13 +21,13 @@ const Footer = () => {
         </nav>
         <div className="footer-social">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <img src="/path/to/facebook-icon.png" alt="Facebook" className="social-icon" />
+          <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/facebook-new.png" alt="facebook-new"/>
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <img src="/path/to/twitter-icon.png" alt="Twitter" className="social-icon" />
+          <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/FFFFFF/twitterx--v1.png" alt="twitterx--v1"/>
           </a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <img src="/path/to/instagram-icon.png" alt="Instagram" className="social-icon" />
+          <img width="50" height="50" src="https://img.icons8.com/glyph-neue/50/FFFFFF/instagram-new--v1.png" alt="instagram-new--v1"/>
           </a>
         </div>
       </div>

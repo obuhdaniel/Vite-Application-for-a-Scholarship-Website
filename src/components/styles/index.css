@@ -11,62 +11,7 @@ body {
     background-color: #f4f4f4;
 }
 
-.navbar {
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-}
 
-.navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-}
-
-.nav-list {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-}
-
-.nav-list-item a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-}
-
-.nav-list-item a:hover {
-    color: #007bff;
-}
-
-.nav-actions {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.action-buttons-login, .action-buttons {
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.action-buttons-login {
-    color: #007bff;
-    border: 1px solid #007bff;
-}
-
-.action-buttons {
-    color: #fff;
-    background-color: #007bff;
-    border: 1px solid #007bff;
-}
 
 .hero-section {
     width: 100%;
@@ -82,6 +27,7 @@ body {
     text-align: center;
     height: 100%;
     padding: 2rem;
+    width: 100%;
 }
 .hero-section {
     display: flex;
@@ -104,7 +50,7 @@ body {
   }
   
   .hero-text-1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: bold;
     color: #ffffff;
     margin-bottom: 20px;
@@ -112,7 +58,7 @@ body {
   }
   
   .hero-text-2 {
-    font-size: 1.25rem;
+    font-size: 2.25rem;
     color: #ffffff;
     animation: fadeIn 2s 0.5s ease-out forwards; /* Delayed fadeIn */
   }
@@ -139,11 +85,11 @@ body {
   
   @media (max-width: 768px) {
     .hero-text-1 {
-      font-size: 2rem;
+      font-size: 3rem;
     }
   
     .hero-text-2 {
-      font-size: 1rem;
+      font-size: 2rem;
     }
   }
 
@@ -191,6 +137,11 @@ body {
     font-weight: 600;
 }
 
+.subscribe_text{
+  color: white;
+  font-size: 60px;
+}
+
 /* Footer.css */
 .footer {
     background-color: #333;
@@ -205,7 +156,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 20px;
   }
@@ -222,6 +173,7 @@ body {
   .logo-image {
     width: 100px; /* Adjust as needed */
     max-width: 100%;
+    border-radius: 300px;
   }
   
   .footer-nav {
@@ -329,36 +281,40 @@ body {
   }
   
   .newsletter-signup h2 {
-    font-size: 1.5rem;
+    
     margin-bottom: 3rem;
   }
   
   .newsletter-signup form {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
   
   .newsletter-signup input[type="email"] {
     padding: 10px;
     font-size: 1rem;
-    border: 1px solid #ccc;
+    border: 3px solid #121212;
     border-radius: 4px;
     margin-bottom: 10px;
+    width: 70%;
   }
   
   .newsletter-signup button {
-    background-color: rgb(0, 0, 0);
-    color: white;
+    background-color: white;
+    color: rgb(0, 0, 0);
     padding: 10px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 70%;
   }
   
   .newsletter-signup button:hover {
-    background-color: #3d7c96;
+    background-color: #343536;
+    color: white;
   }
   
   .error-message {
@@ -376,7 +332,7 @@ body {
   }
   
   .info-container {
-    max-width: 900px;
+    max-width: 90%;
     margin: auto;
     padding: 30px;
     background-color: #ffffff;
@@ -468,4 +424,42 @@ body {
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+ 
+  /* CALL TO ACTION BUTTONS */
+
+  .cta-buttons {
+    margin-top: 30px;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .cta-button-login {
+    background-color: #007bff; /* Blue background */
+    color: white;
+  }
+  
+  .cta-button-register {
+    background-color: #28a745; /* Green background */
+    color: white;
+  }
+  
+  .cta-button:hover {
+    background-color: #0056b3; /* Darker blue for login on hover */
+    transform: scale(1.05);
+  }
+  
+  .cta-button-register:hover {
+    background-color: #218838; /* Darker green for register on hover */
+    transform: scale(1.05);
   }
