@@ -91,7 +91,7 @@ const LoginPage = () => {
         <span>Don't Have an Account Yet? <a href="/register" className="copy-link">Register</a></span>
       </div>
       <footer>
-        <span>
+        <span className='copy-text white'>
           © 2024 The Algorithm National Competition. All Rights Reserved | Powered by: <a href="https://compass.ai" className="copy-link">Compass Ai</a>
         </span>
       </footer>

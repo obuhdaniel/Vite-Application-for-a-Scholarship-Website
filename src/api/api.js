@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const fetchPaymentDetails = async (userId) => {
   try {
-    const response = await axios.get('http://localhost:3001/api/users/pay', {
+    const response = await axios.get('https://thealgorithm.onrender.com/api/users/pay', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('authToken')}`
       },
@@ -16,7 +16,7 @@ export const fetchPaymentDetails = async (userId) => {
   }
 };
 export const axiosInstance = axios.create({
-  baseURL: 'http://localhost:3001/api', // Replace with your backend URL
+  baseURL: 'https://thealgorithm.onrender.com/api/', // Replace with your backend URL
   headers: {
     'Content-Type': 'application/json',
   },

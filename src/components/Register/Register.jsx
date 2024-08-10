@@ -32,7 +32,7 @@ const RegisterPage = () => {
 
     try {
       // Replace 'http://your-backend-api/register' with your actual backend URL
-      const response = await axios.post('http://localhost:3001/api/users/register', userData);
+      const response = await axios.post('https://thealgorithm.onrender.com/api/users/register', userData);
       
       // Handle success response
       setSuccess("Registration successful! Please login.");
