@@ -160,3 +160,63 @@ body, html {
     padding: 3px !important;
   }
 }
+
+
+
+/* DashboardLayout.css */
+
+/* General styles */
+.dashboard {
+  display: flex;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 250px;
+  background-color: #333;
+  color: #fff;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.sidebar.closed {
+  transform: translateX(-250px);
+}
+
+.menu-icon {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Hide sidebar on small devices */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar.closed {
+    transform: translateX(-200px);
+  }
+
+  .menu-icon {
+    display: block; /* Show menu icon on small devices */
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .sidebar.open + .main-content {
+    margin-left: 200px; /* Adjust margin to fit the open sidebar */
+  }
+}

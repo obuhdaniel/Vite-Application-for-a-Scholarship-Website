@@ -1,21 +1,19 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./DashboardLayout.css";
 import logo from "../../assets/logo.png";
 import { axiosInstance } from "../../api/api";
 
-
 const DashboardLayout = ({ children }) => {
-
   const [paymentDetails, setPaymentDetails] = useState(null);
   const [error, setError] = useState(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   useEffect(() => {
     const fetchPaymentDetails = async () => {
       try {
-        const response = await axiosInstance.get('users/pay'); 
+        const response = await axiosInstance.get('users/pay');
         setPaymentDetails(response.data.paymentData);
-        ;
         setError(null);
       } catch (err) {
         console.error('Error fetching payment details:', err.response ? err.response.data : err.message);
@@ -26,15 +24,19 @@ const DashboardLayout = ({ children }) => {
 
     fetchPaymentDetails();
   }, []);
+
   const childrenWithProps = React.Children.map(children, child =>
     React.cloneElement(child, { paymentDetails, error })
   );
 
-  console.log('Payment Details Prop:', paymentDetails); // Ensure this log shows correct data
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   return (
     <div className="dashboard">
-      <div className="sidebar">
+      <div className={`sidebar ${isSidebarOpen ? 'open' : 'closed'}`}>
+        <button className="menu-icon" onClick={toggleSidebar}>&#9776;</button>
         <div className="logo">
           <img src={logo} alt="Logo" />
         </div>
@@ -74,7 +76,7 @@ const DashboardLayout = ({ children }) => {
                     width="30"
                     height="30"
                     src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/30/FFFFFF/external-Personal-Information-politics-smashingstocks-glyph-smashing-stocks.png"
-                    alt="external-Personal-Information-politics-smashingstocks-glyph-smashing-stocks"
+                    alt="personal-info"
                   />
                   Personal Info
                 </button>
@@ -100,7 +102,7 @@ const DashboardLayout = ({ children }) => {
                     width="32"
                     height="32"
                     src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/32/FFFFFF/external-withdraw-finance-2-kmg-design-glyph-kmg-design.png"
-                    alt="external-withdraw-finance-2-kmg-design-glyph-kmg-design"
+                    alt="bank-details"
                   />
                   Bank Details
                 </button>
@@ -113,7 +115,7 @@ const DashboardLayout = ({ children }) => {
                     width="30"
                     height="30"
                     src="https://img.icons8.com/ios-filled/30/FFFFFF/document--v1.png"
-                    alt="document--v1"
+                    alt="acknowledgement"
                   />
                   Acknowledgement
                 </button>
@@ -126,7 +128,7 @@ const DashboardLayout = ({ children }) => {
                     width="30"
                     height="30"
                     src="https://img.icons8.com/pastel-glyph/30/FFFFFF/exit--v1.png"
-                    alt="exit--v1"
+                    alt="logout"
                   />
                   Logout
                 </button>
